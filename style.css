@@ -187,25 +187,14 @@ body {
 
 
 
-.trial {
+.homeSection {
     height: 100vh;
     width: 100%;
-    /* position: sticky; */
-    /* top: 0; */
-    position: absolute;
-    top: 0;
-    z-index: 25;
+    position: relative;
+    color: #d9d9d9;
     display: grid;
     grid-template-rows: 15% 65% 20%;
     grid-template-columns: 30% 40% 30%;
-}
-
-.homeSection {
-    height: 220vh;
-    width: 100%;
-    position: relative;
-    background-color: #000000;
-    color: #d9d9d9;
 }
 
 .homeEntry {
@@ -232,9 +221,9 @@ body {
     width: 100%;
     background-color: #85b08f;
     z-index: 22;
-    position: absolute;
+    /* position: absolute;
     top: 100vh;
-    left: 0;
+    left: 0; */
     font-weight: 500;
     color: rgb(0, 0, 0);
     
@@ -250,7 +239,18 @@ body {
 .purple {
     color: #48306c;
 }
-  
+ 
+
+.waves {
+    background-color: #000000;
+    z-index: -1;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 200vh;
+    width: 100%;
+}
+
 .wave {
     filter: drop-shadow(0px -30px 30px #48306c);
     fill: #000000;
@@ -499,6 +499,8 @@ body {
     color: white;
     background-color: #000000;
     padding: 2em;
+    height: 100%;
+    box-sizing: border-box;
 }
 
 .infoIconWrapper {
@@ -539,14 +541,9 @@ body {
     color: white;
     display: grid;
     grid-template-columns: 2fr 3fr;
+    grid-template-rows: 8fr 2fr;
 }
 
-.signUpTitleWrapper {
-    height: 100vh;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-}
 
 .signUpTitle {
     padding: 20vh 5vw 10vh 5vw;
@@ -649,7 +646,7 @@ input:-webkit-autofill {
 
     #titleSide {
         grid-area: auto / 1 / auto / 2;
-        padding: 1vh 5vw;
+        padding: 1vh 8vw;
         margin: 0;
         text-align: left;
     }
@@ -657,7 +654,7 @@ input:-webkit-autofill {
     .homeEntry {
         grid-area: auto / 1 / auto / 2;
         display: block;
-        padding: 1vh 5vw;
+        padding: 1vh 8vw;
         font-size: 16px;
     }
 
@@ -665,25 +662,54 @@ input:-webkit-autofill {
         grid-area: auto / 1 / auto / 2;
         align-self: flex-start;
         justify-self: flex-start;
-        padding: 1vh 5vw;
+        padding: 1vh 8vw;
     }
 
     .overlapIntro {
-        height: 140vh;
+        height: auto;
     }
 
-    .homeSection {
-        height: 240vh;
+    .introText {
+        width: 100%;
+        padding: 20vh 8vw;
     }
+
 
     #shedule {
         grid-template-columns: 100%;
         grid-row: auto;
     }
 
+    .sheduleTitleWrapper {
+        position: sticky;
+        top: 0;
+        width: 100%;
+        background-color: #d9d9d9;
+    }
+
+    .titleShedule {
+        padding: 15vh 8vw 5vh 8vw;
+        width: 100%;
+        background-color: #d9d9d9;
+    }
+
+    #topics {
+        margin: 0;
+    }
+
+    .topic {
+        padding: 1em 1em 1em 8vw;
+    }
+
+    #infos {
+        height: 400vh;
+    }
+
     .infosGrid {
         grid-template-columns: 100%;
         grid-template-rows: auto;
+        gap: 4em;
+        grid-auto-rows: auto;
     }
 
     .infoTime, 
@@ -694,17 +720,44 @@ input:-webkit-autofill {
     }
 
     .infosTitle {
-        padding: 22vh 5vw 10vh 5vw;
+        padding: 22vh 8vw 10vh 8vw;
         font-size: 5em;
     }
 
     #signUp {
         grid-template-columns: 100%;
         grid-template-rows: auto;
+        height: auto;
+    }
+
+    .formSection {
+        display: flex;
+        flex-direction: column;
+    }
+
+    label {
+        padding: 2rem 0 .5rem 0;
+    }
+
+    input {
+        padding: .5rem 0 2rem 0;
+    }
+
+    .signUpForm {
+        padding: 0 0 10vh 8vw;
     }
 
     .signUpTitleWrapper {
         height: auto;
+    }
+
+    .signUpTitle {
+        padding-left: 8vw;
+    }
+
+    .signUpSubTitle {
+        padding-left: 8vw;
+        padding-right: 8vw;
     }
 
 }
