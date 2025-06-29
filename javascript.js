@@ -41,6 +41,86 @@ document.querySelectorAll('.topic').forEach(topic => {
 
 
 
+const menu = document.getElementById('nav');
+menu.addEventListener('click', () => {
+  const navDrop = document.querySelector('.dropNav');
+  navDrop.classList.toggle('closed');
+})
+
+
+
+window.addEventListener('scroll', () => {
+  const scrollY = window.scrollY; 
+
+  const nav = document.getElementById('nav');
+  const location = document.getElementById('currentLocation');
+  const navLocation = document.querySelectorAll('.navLocation');
+
+  const intro = document.querySelector('.overlapIntro');
+  const shedule = document.getElementById('shedule');
+  const infos = document.getElementById('infos');
+  const signup = document.getElementById('signUp');
+
+  const trigger1 = intro.offsetTop - window.innerHeight * 0.5;
+  const trigger2 = shedule.offsetTop - window.innerHeight * 0.5;
+  const trigger3 = infos.offsetTop - window.innerHeight * 0.5;
+  const trigger4 = signup.offsetTop - window.innerHeight * 0.5;
+
+  const trigger5 = intro.offsetTop - window.innerHeight * 0.05;
+  const trigger6 = shedule.offsetTop - window.innerHeight * 0.05;
+  const trigger7 = infos.offsetTop - window.innerHeight * 0.05;
+  const trigger8 = signup.offsetTop - window.innerHeight * 0.05;
+
+  if (scrollY > trigger1 && scrollY < trigger2) {
+    location.textContent = 'ABOUT';
+  } else if (scrollY > trigger2 && scrollY < trigger3) {
+    location.textContent = 'TOPICS';
+  } else if (scrollY > trigger3 && scrollY < trigger4) {
+    location.textContent = 'INFORMATIONS';
+  } else if (scrollY > trigger4) {
+    location.textContent = 'SIGN UP';
+  } else {
+    location.textContent = 'HOME';
+  }
+
+  if (scrollY > trigger5 && scrollY < trigger6) {
+    nav.style.backgroundColor = '#85b08f';
+    nav.style.color = 'black';
+    nav.style.border = '1px solid #00000088';
+    navLocation.forEach((el) => {
+      el.style.borderBottom = '1px solid #00000088';
+    })
+  } else if (scrollY > trigger6 && scrollY < trigger7) {
+    nav.style.backgroundColor = '#d9d9d9';
+    nav.style.color = '#48306c';
+    nav.style.border = '1px solid #48306c88';
+    navLocation.forEach((el) => {
+      el.style.borderBottom = '1px solid #48306c88';
+    })
+  } else if (scrollY > trigger7 && scrollY < trigger8) {
+    nav.style.backgroundColor = 'black';
+    nav.style.color = 'white';
+    nav.style.border = '1px solid #ffffff88';
+    navLocation.forEach((el) => {
+      el.style.borderBottom = '1px solid #ffffff88';
+    })
+  } else if (scrollY > trigger8) {
+    nav.style.backgroundColor = '#3c2c52';
+    nav.style.color = 'white';
+    nav.style.border = '1px solid #ffffff88';
+    navLocation.forEach((el) => {
+      el.style.borderBottom = '1px solid #ffffff88';
+    })
+  } else {
+    nav.style.backgroundColor = 'black';
+    nav.style.color = 'white';
+    nav.style.border = '1px solid #ffffff88';
+    navLocation.forEach((el) => {
+      el.style.borderBottom = '1px solid #ffffff88';
+    })
+  }
+})
+
 
 
 // gsap.registerPlugin(ScrollTrigger);

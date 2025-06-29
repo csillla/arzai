@@ -1,3 +1,13 @@
+
+
+
+
+
+
+
+
+
+
 @font-face {
     font-family: 'Objectivity';
     src: url('font/Objectivity/Objectivity-ExtraBold.woff2') format('woff2');
@@ -107,7 +117,7 @@
 
 a {
     text-decoration: none;
-    color: white;
+    color: inherit;
 }
 
 html {
@@ -124,8 +134,8 @@ body {
 
 #nav {
     grid-area: 1 / 2 / 2 / 3;
-    border-radius: 2em;
-    border: 1px solid rgba(255, 255, 255, 0.61);
+    border-radius: 1.8rem;
+    border: 1px solid #ffffff88;
     position: fixed;
     top: 5vh;
     left: calc(38vw);
@@ -135,6 +145,7 @@ body {
     padding: .6em 1.2em;
     box-sizing: border-box;
     z-index: 9999;
+    cursor: pointer;
 }
 
 .baseNav {
@@ -142,19 +153,37 @@ body {
     align-items: center;
 }
 
+.dropNav {
+    display: flex;
+    flex-direction: column;
+    /* padding-top: 2rem; */
+    box-sizing: border-box;
+    /* height: 0; */
+    overflow: hidden;
+}
+
+.dropNav.closed {
+    height: 0;
+}
+    
+
+.loc {
+    padding: .5rem 0;
+    border-bottom: 1px solid #ffffff88;
+}
+
+.loc.first {
+    padding-top: 2rem;
+}
+
+.loc.last {
+    border-bottom: none;
+}
+
 #currentLocation {
     margin-right: auto;
     font-weight: 600;
 }
-/* 
-#hero {
-    height: 500vh;
-    width: 100vw;
-    background-color: black;
-    position: relative;
-    overflow-x: hidden;
-    overflow: hidden;
-} */
 
 
 
@@ -582,7 +611,100 @@ input:-webkit-autofill {
     gap: .5rem;
 }
 
+.sendBtn:hover {
+    background: white;
+    color: #3c2c52;
+    border: 1px solid #3c2c52;
+}
+
 .arrowSend {
     font-size: 1.6rem;
     rotate: 180deg;
+}
+
+
+@media (max-width: 1000px) {
+    html {
+        font-size: 14px;
+        overflow-x: scroll;
+    }
+    
+    .trial {
+        display: grid;
+        height: 100vh;
+        grid-template-rows: 10vh 40vh auto;
+        grid-template-columns: 100%;
+    }
+
+    .homeLogo {
+        grid-area: 1 / 1 / 2 / 2;
+    }
+
+    
+
+    .titleMain {
+        grid-area: 2 / 1 / 3 / 2;
+        font-size: 8vw;
+    }
+
+    #titleSide {
+        grid-area: auto / 1 / auto / 2;
+        padding: 1vh 5vw;
+        margin: 0;
+        text-align: left;
+    }
+
+    .homeEntry {
+        grid-area: auto / 1 / auto / 2;
+        display: block;
+        padding: 1vh 5vw;
+        font-size: 16px;
+    }
+
+    .actionBtnDiv {
+        grid-area: auto / 1 / auto / 2;
+        align-self: flex-start;
+        justify-self: flex-start;
+        padding: 1vh 5vw;
+    }
+
+    .overlapIntro {
+        height: 140vh;
+    }
+
+    .homeSection {
+        height: 240vh;
+    }
+
+    #shedule {
+        grid-template-columns: 100%;
+        grid-row: auto;
+    }
+
+    .infosGrid {
+        grid-template-columns: 100%;
+        grid-template-rows: auto;
+    }
+
+    .infoTime, 
+    .infoRequired, 
+    .infoLoc, 
+    .infoPay {
+        grid-area: auto / 1 / auto / 2;
+    }
+
+    .infosTitle {
+        padding: 22vh 5vw 10vh 5vw;
+        font-size: 5em;
+    }
+
+    #signUp {
+        grid-template-columns: 100%;
+        grid-template-rows: auto;
+    }
+
+    .signUpTitleWrapper {
+        height: auto;
+    }
+
 }
