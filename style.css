@@ -138,7 +138,7 @@ body {
     border: 1px solid #ffffff88;
     position: fixed;
     top: 5vh;
-    left: calc(38vw);
+    right: 38vw;
     width: 24vw;
     color: white;
     background-color: black;
@@ -324,6 +324,19 @@ body {
     overflow: hidden;
 }
 
+.titleMainBlock {
+    display: inline-block;
+}
+
+
+.titleMainBlock {
+    display: flex;
+}
+
+.textClip {
+    display: flex;
+}
+
 .textClipWrapper {
     overflow: hidden;
 }
@@ -386,6 +399,7 @@ body {
     padding: 10vh 5vw;
     position: sticky;
     top: 0;
+    font-size: 4em;
 }
 
 .sheduleTitleWrapper {
@@ -627,28 +641,52 @@ input:-webkit-autofill {
     }
     
     .trial {
-        display: grid;
+        display: flex;
+        flex-direction: column;
         height: 100vh;
-        grid-template-rows: 10vh 40vh auto;
-        grid-template-columns: 100%;
+        /* grid-template-rows: 10vh 30vh auto; */
+        /* grid-auto-rows: auto; */
+        /* grid-template-columns: 100%; */
     }
 
     .homeLogo {
-        grid-area: 1 / 1 / 2 / 2;
+        /* grid-area: 1 / 1 / 2 / 2; */
+        margin-left: 8vw;
+        margin-bottom: 0;
+        height: 3em;
+        width: 3em;
     }
 
     
 
     .titleMain {
-        grid-area: 2 / 1 / 3 / 2;
-        font-size: 8vw;
+        /* grid-area: 2 / 1 / 3 / 2; */
+        font-size: 12vw;
+        box-sizing: border-box;
+        padding: 10vh 8vw 2vh 8vw;
+        /* justify-content: flex-end; */
+    }
+
+    .textClip {
+        flex-direction: column;
+    }
+
+    /* .left .textClip {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+    } */
+
+    .right.textClipWrapper {
+        align-self: flex-start;
     }
 
     #titleSide {
         grid-area: auto / 1 / auto / 2;
-        padding: 1vh 8vw;
+        padding: 2vh 8vw 2vh 8vw;
         margin: 0;
         text-align: left;
+        align-self: flex-start;
     }
 
     .homeEntry {
@@ -662,7 +700,7 @@ input:-webkit-autofill {
         grid-area: auto / 1 / auto / 2;
         align-self: flex-start;
         justify-self: flex-start;
-        padding: 1vh 8vw;
+        padding: 6vh 8vw 5vh 8vw;
     }
 
     .overlapIntro {
@@ -671,13 +709,16 @@ input:-webkit-autofill {
 
     .introText {
         width: 100%;
-        padding: 20vh 8vw;
+        /* padding: 20vh 8vw; */
+        padding: 15vh 8vw;
+        box-sizing: border-box;
     }
 
 
     #shedule {
         grid-template-columns: 100%;
         grid-row: auto;
+        position: relative;
     }
 
     .sheduleTitleWrapper {
@@ -685,12 +726,15 @@ input:-webkit-autofill {
         top: 0;
         width: 100%;
         background-color: #d9d9d9;
+        z-index: 5;
     }
 
     .titleShedule {
         padding: 15vh 8vw 5vh 8vw;
         width: 100%;
         background-color: #d9d9d9;
+        font-size: 3em;
+        box-sizing: border-box;
     }
 
     #topics {
@@ -758,6 +802,26 @@ input:-webkit-autofill {
     .signUpSubTitle {
         padding-left: 8vw;
         padding-right: 8vw;
+    }
+
+    #nav {
+        right: 8vw;
+        width: auto;
+        border-radius: 12px;
+
+    }
+
+    .dropNav.closed {
+        width: 24px;
+        box-sizing: border-box;
+    }
+
+    .baseNav {
+        justify-content: flex-end;
+    }
+
+    #currentLocation {
+        display: none;
     }
 
 }
