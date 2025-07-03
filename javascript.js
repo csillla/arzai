@@ -1,6 +1,8 @@
 
 const firstWave = document.getElementById("firstWave");
 const secondWave = document.getElementById("secondWave");
+const thirdWave = document.getElementById("thirdWave");
+const fourthWave = document.getElementById("fourthWave");
 
 let latestScroll = 0;
 let ticking = false;
@@ -16,12 +18,16 @@ window.addEventListener("scroll", () => {
 
       firstWave.style.transform = `translateY(${-latestScroll * speedFirst}px)`;
       secondWave.style.transform = `translateY(${-latestScroll * speedSecond}px)`;
+      thirdWave.style.transform = `translateY(${-latestScroll * speedFirst}px)`;
+      fourthWave.style.transform = `translateY(${-latestScroll * speedSecond}px)`;
 
       ticking = false;
     });
     ticking = true;
   }
 });
+
+
 
 
 
@@ -76,7 +82,7 @@ window.addEventListener('scroll', () => {
   } else if (scrollY > trigger2 && scrollY < trigger3) {
     location.textContent = 'TOPICS';
   } else if (scrollY > trigger3 && scrollY < trigger4) {
-    location.textContent = 'INFORMATIONS';
+    location.textContent = 'DETAILS';
   } else if (scrollY > trigger4) {
     location.textContent = 'SIGN UP';
   } else {
