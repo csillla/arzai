@@ -11,6 +11,16 @@
     <link href="style.css" rel="stylesheet">
 </head>
 <body>
+
+    <div id="overlay">
+        <a class="actionHref" href="#details"><div class="fontSize18 stickyActionBtn">
+            <span class="arrowSend material-symbols-outlined">
+                arrow_insert
+            </span>
+            <div class="actionText">details</div>
+        </div></a>
+    </div>
+
     <div id="nav">
         <div class="baseNav">
             <div id="currentLocation" class="fontSize13">HOME</div>
@@ -28,6 +38,7 @@
             <a href="#signUp"><div class="loc last">SIGN UP</div></a>
         </div>
     </div>
+
 
     <div class="waves">
 
@@ -76,14 +87,14 @@
                 <div class="fontSize20 bold">August 31, 2025</div>
             </div>
 
-            <div class="actionBtnDiv">
+            <!-- <div class="actionBtnDiv">
                 <a href="#details"><div class="actionBtn fontSize20">
                     <span class="arrowSend material-symbols-outlined">
                         arrow_insert
                     </span>
                     <div>the course</div>
                 </div></a>
-            </div>
+            </div> -->
 
         </div>
 
@@ -104,7 +115,7 @@
     </div>
 
     <div id="shedule">
-        <div class="sheduleTitleWrapper"><div class="titleShedule bold">WHAT WILL<br>YOU LEARN<br><em>EXACTLY</em>?</div></div>
+        <div class="sheduleTitleWrapper"><div class="titleShedule bold">WHAT<br>WILL YOU<br>LEARN?</div></div>
         <div id="topics">
 
             <div class="topic topicFirst">
@@ -240,9 +251,9 @@
                     </span>
                 </div>
                 <div class="topicSecondWrapper">
-                    <div class="topicTitle fontSize20 bold">Applying These Techniques in Real-World Projects</div>
-                    <div class="topicSummary fontSize18">From theory to working systems.</div>
-                    <div class="topicExpl fontSize18 displayNone">Learn how to turn AI concepts into working solutions. This section covers how to scope projects, choose the right tools, and combine techniques like RAG, fine-tuning, or diffusion to solve real-world problems effectively.</div>
+                    <div class="topicTitle fontSize20 bold">Agents</div>
+                    <div class="topicSummary fontSize18">Effective use of tools.</div>
+                    <div class="topicExpl fontSize18 displayNone">Use LLMs to create your agent for solving complex problems, by leveraging on interactions with the environment. They understand the situation and act accordingly.</div>
                 </div>
                 <div class="topicArrow">
                     <span class="arrow material-symbols-outlined">
@@ -326,13 +337,13 @@
         </div>
     </div>
 
-    <div id="infos">
+    <div id="infos" class="follower">
         
         <div class="infosTitleWrapper">
             <div class="infosTitle fontSize86 bold">ALL YOU<br>NEED<br>TO KNOW</div>
         </div>
 
-        <div class="infosGrid">
+        <div class="infosGrid reference">
             <div class="infoTime" id="details">
                 <div class="info fontSize18">
                     <div class="infoIconWrapper">
@@ -346,8 +357,9 @@
                                 arrow_insert
                             </span>
                             <div class="infoText">
-                                <div class="bold">12 weeks</div>
-                                <div>from September 13 to December 6, 2025</div>
+                                <div class="bold">12 + 4 weeks</div>
+                                <div>12 weeks tuition from September 13 to December 6</div>
+                                <div>4 weeks supervised project</div>
                             </div>
                     </div>
 
@@ -392,16 +404,7 @@
                         </span> 
                     </div>
 
-                    <div class="infoSnippet">
-                        <span class="arrowInfo material-symbols-outlined">
-                            arrow_insert
-                        </span>
-                        <div class="infoText">
-                            <div class="bold">Designed as a continuation of the postgraduate program <em>“Mathematics Expert in Data Analytics and Machine Learning”</em> offered by the Mathematical Institute of Eötvös Loránd University</div>
-                            <div>— but with greater flexibility than is possible within the formal university structure.</div>
-                            <div style="margin-top: .5rem;">Completion of this previous or any similar program is not a prerequisite.</div>
-                        </div>
-                    </div>
+                    
 
                     
 
@@ -410,7 +413,7 @@
                             arrow_insert
                         </span>
                         <div class="infoText">
-                            <div class="bold">Prerequisite: good command of Python and understanding of deep learning concepts</div>
+                            <div class="bold">Prerequisite: good command of Python and understanding of deep learning concepts.</div>
                         </div>
                     </div>
 
@@ -421,6 +424,17 @@
                         <div class="infoText">
                             <div class="bold">Solid understanding of mathematical concepts is an advantage.</div>
                             <div>e.g., optimization, statistical learning</div>
+                        </div>
+                    </div>
+
+                    <div class="infoSnippet">
+                        <span class="arrowInfo material-symbols-outlined">
+                            arrow_insert
+                        </span>
+                        <div class="infoText">
+                            <div class="bold">Designed as a continuation of the postgraduate program <em>“Mathematics Expert in Data Analytics and Machine Learning”</em> offered by the Mathematical Institute of Eötvös Loránd University</div>
+                            <div>— but with greater flexibility than is possible within the formal university structure.</div>
+                            <div style="margin-top: .5rem;">Completion of this previous or any similar program is <strong>not</strong> a prerequisite.</div>
                         </div>
                     </div>
 
@@ -461,7 +475,7 @@
                             arrow_insert
                         </span>
                         <div class="infoText">
-                            <div class="bold">Director: András Zempléni.</div>
+                            <div class="bold">Director: András Zempléni</div>
                         </div>
                     </div>
 
@@ -470,7 +484,7 @@
                             arrow_insert
                         </span>
                         <div class="infoText">
-                            <div class="bold">Head teacher: András Lukács</div>
+                            <div class="bold">Senior lecturer: András Lukács</div>
                         </div>
                     </div>
 
@@ -539,33 +553,62 @@
     <div>
     <div id="signUp">
 
-        <div class="signUpTitle fontSize86 bold">SIGN<br>UP</div>
-
-        <div>
-            <form class="signUpForm" action="https://formsubmit.co/dora.gardonyi01@gmail.com" method="POST">
-
-                <div class="formSection first">
-                    <label for="name" class="fontSize20">Full name *</label>
-                    <input class="fontSize20" type="text" name="name" id="name" placeholder="Your Name" required> 
+        <div class="fill borderLeft" ></div> 
+            
+            <div class="phase1 borderLeftDotted bold">
+                <div class="signBubble1 bold">1</div>
+                <div class="phaseText">
+                    <div class="signUpTitleText fontSize86">SIGN<br>UP</div>
+                    <div class="fontSize20 bold signSide">for the motivational interview, to be held on September 4-5</div>
                 </div>
+            </div>
 
-                <div class="formSection">
-                    <label for="email" class="fontSize20">Email *</label>
-                    <input class="fontSize20" type="email" name="email" id="name" placeholder="Your Email" required>    
+            <div class="phase2 borderLeftDotted">
+                <div class="signBubble2 bold">2</div>
+                <div class="phaseText">
+                    <div class="fontSize20">be part of a strong and motivated group of students</div>
                 </div>
-                
-                <button class="sendBtn bold fontSize20" type="submit">
-                    <span class="arrowSend material-symbols-outlined">
-                        arrow_insert
-                    </span>
-                    <div>Send</div>
-                </button>
-            </form>
-        </div>
+            </div>
 
-        <div class="signUpSubTitle fontSize24 bold">We'll get in touch with the details about what's next.</div>
+            <div class="phase3">
+                <div class="signBubble2 bold">3</div>
+                <div class="phaseText">
+                    <div class="fontSize20">get an official and unique certificate about being an expert AI engineer</div>
+                </div>
+            </div>
+
+
+            <div>
+                <form class="signUpForm" action="https://formsubmit.co/dora.gardonyi01@gmail.com" method="POST">
+
+                    <div class="formSection first">
+                        <label for="name" class="fontSize20">Full name *</label>
+                        <input class="fontSize20" type="text" name="name" id="name" placeholder="Your Name" required> 
+                    </div>
+
+                    <div class="formSection">
+                        <label for="email" class="fontSize20">Email *</label>
+                        <input class="fontSize20" type="email" name="email" id="name" placeholder="Your Email" required>    
+                    </div>
+                    
+                    <button class="sendBtn bold fontSize20" type="submit">
+                        <span class="arrowSend material-symbols-outlined">
+                            arrow_insert
+                        </span>
+                        <div>Send</div>
+                    </button>
+                </form>
+            </div>
+
 
     </div>
+    </div>
+
+    <div class="contacts">
+        <div class="contactTitle">CONTACTS</div>
+        <div class="contactSnip"><strong>Arzai Ltd.</strong></div>
+        <div class="contactSnip">PHONE: +36309738501</div>
+        <div class="contactSnip">EMAIL: info@arzai.hu</div>
     </div>
     
 

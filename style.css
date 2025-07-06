@@ -142,7 +142,7 @@ body {
     width: 24vw;
     color: white;
     background-color: black;
-    padding: .6em 1.2em;
+    padding: .8em 1.2em;
     box-sizing: border-box;
     z-index: 9999;
     cursor: pointer;
@@ -168,7 +168,7 @@ body {
     
 
 .loc {
-    padding: .5rem 0;
+    padding: .8rem 5rem .8rem 0;
     border-bottom: 1px solid #ffffff88;
 }
 
@@ -185,7 +185,16 @@ body {
     font-weight: 600;
 }
 
-
+#overlay {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    /* background-color: #ffffff; */
+    pointer-events: none;
+    z-index: 500;
+}
 
 .homeSection {
     height: 100vh;
@@ -193,7 +202,7 @@ body {
     position: relative;
     color: #d9d9d9;
     display: grid;
-    grid-template-rows: 15% 65% 20%;
+    grid-template-rows: 15% 70% 15%;
     grid-template-columns: 30% 40% 30%;
 }
 
@@ -289,12 +298,12 @@ body {
     font-weight: 600;
     text-align: center;
     line-height: 1.4;
-    align-self: end;
+    align-self: flex-start;
     justify-self: center;
     padding-bottom: 8vh;
 }
 
-.actionBtnDiv {    
+/* .actionBtnDiv {    
     grid-area: 3 / 3 / 4 / 4;
     padding: 0 5vw 0 0;
     display: flex;
@@ -317,10 +326,40 @@ body {
     font-weight: 600;
     overflow: hidden;
     text-wrap: nowrap;
+} */
+
+.stickyActionBtn {
+    position: sticky;
+    margin-top: 85vh;
+    margin-left: calc(94vw - 10rem);
+    top: 5vh;
+    min-width: 0;
+    box-sizing: border-box;
+    background-color: #48306c;
+    color: white;
+    height: 3.5em;
+    padding: .6em 1.2em;
+    border-radius: 8px;
+    display: flex;
+    width: 10rem;
+    gap: .8rem;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    overflow: hidden;
+    text-wrap: nowrap;
+    pointer-events: auto;
 }
 
 .green {
     color: #806aa1;
+}
+
+#actionBtn {
+    position: sticky;
+    margin-top: 80vh;
+    top: 5vh;
+    right: 5vw;
 }
 
 .titleMain {
@@ -565,29 +604,125 @@ body {
     gap: .1em;
 }
 
+/* .bottomContainer {
+    position: relative;
+} */
+
+.contacts {
+    background-color: #141414;
+    height: auto;
+    /* width: 100%; */
+    color: #d9d9d9;
+    padding: 8vh 5vw;
+}
+
+.contactTitle {
+    padding-bottom: 16px;
+}
+
+.contactSnip {
+    padding-bottom: 9px;
+}
+
 #signUp {
     height: 100vh;
     background-color: #3c2c52;
     color: white;
     display: grid;
     grid-template-columns: 2fr 3fr;
-    grid-template-rows: 8fr 2fr;
+    grid-template-rows: 20vh auto;
+    padding-left: 5vw;
 }
 
-
-.signUpTitle {
-    padding: 20vh 5vw 10vh 5vw;
+.fill {
+    height: 20vh;
+    grid-area: 1 / 1 / 2 / 3;
 }
 
+.signSide {
+    padding-top: 2vh;
+    width: 25vw;
+}
+
+.phase1 {
+    display: flex;
+    grid-area: 2 / 1 / 3 / 2;
+    position: relative;
+}
+
+.phase2 {
+    display: flex;
+    grid-area: 3 / 1 / 4 / 2;
+    position: relative;
+    width: 30vw;
+}
+
+.phase3 {
+    display: flex;
+    grid-area: 4 / 1 / 5 / 2;
+    position: relative;
+    width: 30vw;
+}
+
+.phaseText {
+    padding-left: 4vw;
+}
+
+.borderLeft {
+    border-left: 2px solid white;
+}
+
+.borderLeftDotted {
+    border-left: 2px dashed white;
+}
+
+.signBubble1 {
+    height: 50px;
+    width: 50px;
+    font-size: 30px;
+    background-color: #ffffff;
+    color: #3c2c52;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: translate(-50%, -50%);
+    padding-top: 5px;
+    box-sizing: border-box;
+}
+
+.signBubble2 {
+    height: 50px;
+    width: 50px;
+    font-size: 30px;
+    background-color: #3c2c52;
+    color: white;
+    border: 1px solid white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: translate(-50%, -50%);
+    padding-top: 5px;
+    box-sizing: border-box;
+}
+/* 
 .signUpSubTitle {
     padding: 0 5vw 10vh 5vw;
     margin-top: auto;
-}
+} */
 
 .signUpForm {
-    padding: 20vh 0 10vh 5vw;
+    padding: 0 0 10vh 5vw;
     display: flex;
     flex-direction: column;
+    grid-area: 2 / 2 / 3 / 3;
 }
 
 input {
@@ -712,11 +847,16 @@ input:-webkit-autofill {
         font-size: 16px;
     }
 
-    .actionBtnDiv {
+    /* .actionBtnDiv {
         grid-area: auto / 1 / auto / 2;
         align-self: flex-start;
         justify-self: flex-start;
         padding: 6vh 8vw 5vh 8vw;
+    } */
+
+    .stickyActionBtn {
+        margin-top: 85vh;
+        margin-left: 8vw;
     }
 
     .overlapIntro {
@@ -787,10 +927,29 @@ input:-webkit-autofill {
     }
 
     #signUp {
-        grid-template-columns: 100%;
-        grid-template-rows: auto;
+        grid-template-columns: 1fr;
+        grid-template-rows: 20vh auto;
         height: auto;
+        padding-left: 10vw;
+        padding-bottom: 5vh;
     }
+
+    .fill {
+        grid-area: 1 / 1 / 2 / 2;
+    }
+
+    .phase1 {
+        grid-area: 2 / 1 / 3 / 2;
+    }
+
+    .phase2 {
+        grid-area: 4 / 1 / 5 / 2;
+    }
+
+    .phase3 {
+        grid-area: 5 / 1 / 6 / 2;
+    }
+
 
     .formSection {
         display: flex;
@@ -806,21 +965,55 @@ input:-webkit-autofill {
     }
 
     .signUpForm {
-        padding: 0 0 10vh 8vw;
+        padding: 0 0 10vh 10vw;
+        grid-area: 3 / 1 / 4 / 2;
+        border-left: 2px dashed white;
+    }
+
+    .signBubble1,
+    .signBubble2 {
+        height: 45px;
+        width: 45px;
+        font-size: 25px;
+    }
+
+    .phase1, 
+    .phase2, 
+    .phase3 {
+        padding: 0 6vw;
+    }
+
+    .phase2, 
+    .phase3 {
+        width: 70vw;
+        padding-bottom: 2rem;
+    }
+
+    .signSide {
+        padding-bottom: 4rem;
+        width: 70vw;
     }
 
     .signUpTitleWrapper {
         height: auto;
     }
 
-    .signUpTitle {
-        padding-left: 8vw;
+    .signUpTitleText {
+        font-size: 60px;
     }
 
-    .signUpSubTitle {
+    .introTitle {
+        font-size: 35px;
+    }
+
+    /* .signUpTitle {
+        padding-left: 8vw;
+    } */
+
+    /* .signUpSubTitle {
         padding-left: 8vw;
         padding-right: 8vw;
-    }
+    } */
 
     #nav {
         right: 8vw;

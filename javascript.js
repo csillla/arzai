@@ -61,6 +61,9 @@ window.addEventListener('scroll', () => {
   const nav = document.getElementById('nav');
   const location = document.getElementById('currentLocation');
   const navLocation = document.querySelectorAll('.navLocation');
+  const actionBtn = document.querySelector('.stickyActionBtn');
+  const actionText = document.querySelector('.actionText');
+  const actionHref = document.querySelector('.actionHref');
 
   const intro = document.querySelector('.overlapIntro');
   const shedule = document.getElementById('shedule');
@@ -95,37 +98,92 @@ window.addEventListener('scroll', () => {
     nav.style.border = '1px solid #00000088';
     navLocation.forEach((el) => {
       el.style.borderBottom = '1px solid #00000088';
-    })
+    });
+    actionBtn.style.backgroundColor = '#48306c';
+    actionBtn.style.color = 'white';
+    actionBtn.style.border = '1px solid transparent';
+    actionText.textContent = 'details';
+    actionHref.href = '#details';
   } else if (scrollY > trigger6 && scrollY < trigger7) {
     nav.style.backgroundColor = '#d9d9d9';
     nav.style.color = '#48306c';
     nav.style.border = '1px solid #48306c88';
     navLocation.forEach((el) => {
       el.style.borderBottom = '1px solid #48306c88';
-    })
+    });
+    actionBtn.style.backgroundColor = '#48306c';
+    actionBtn.style.color = 'white';
+    actionBtn.style.border = '1px solid transparent';
+    actionText.textContent = 'details';
+    actionHref.href = '#details';
   } else if (scrollY > trigger7 && scrollY < trigger8) {
     nav.style.backgroundColor = 'black';
     nav.style.color = 'white';
     nav.style.border = '1px solid #ffffff88';
     navLocation.forEach((el) => {
       el.style.borderBottom = '1px solid #ffffff88';
-    })
+    });
+    actionBtn.style.backgroundColor = '#85b08f';
+    actionBtn.style.color = 'black';
+    actionBtn.style.border = '1px solid #00000088';
+    actionText.textContent = 'sign up';
+    actionHref.href = '#signUp';
+    actionHref.href = '#signUp';
   } else if (scrollY > trigger8) {
     nav.style.backgroundColor = '#3c2c52';
     nav.style.color = 'white';
     nav.style.border = '1px solid #ffffff88';
     navLocation.forEach((el) => {
       el.style.borderBottom = '1px solid #ffffff88';
-    })
+    });
+    actionBtn.style.backgroundColor = 'transparent';
+    actionBtn.style.color = 'transparent';
+    actionBtn.style.border = '1px solid transparent';
+    actionText.textContent = 'sign up';
   } else {
     nav.style.backgroundColor = 'black';
     nav.style.color = 'white';
     nav.style.border = '1px solid #ffffff88';
     navLocation.forEach((el) => {
       el.style.borderBottom = '1px solid #ffffff88';
-    })
+    });
+    actionBtn.style.backgroundColor = '#48306c';
+    actionBtn.style.color = 'white';
+    actionBtn.style.border = '1px solid transparent';
+    actionText.textContent = 'details';
+    actionHref.href = '#details';
   }
 })
+
+
+
+const ref = document.querySelector('.reference');
+const follower = document.querySelector('.follower');
+const additionalHeight = window.innerHeight;
+
+function syncHeight() {
+  follower.style.height = (ref.offsetHeight + additionalHeight * 0.1) + 'px';
+}
+
+syncHeight();
+window.addEventListener('resize', syncHeight);
+
+
+
+
+
+function updateOverlayHeight() {
+  const overlay = document.getElementById('overlay');
+  overlay.style.height = document.body.scrollHeight + 'px';
+  // overlay.style.backgroundColor = '#00000088';
+}
+
+updateOverlayHeight();
+
+window.addEventListener('resize', updateOverlayHeight);
+window.addEventListener('click', updateOverlayHeight);
+
+
 
 
 
